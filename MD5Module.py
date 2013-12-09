@@ -1,6 +1,6 @@
 from org.freecode.irc.votebot.api import ExternalModule
 
-import md5
+import hashlib
 
 class MD5Module(ExternalModule):
     def getName(self):
@@ -8,8 +8,9 @@ class MD5Module(ExternalModule):
 
     def processMessage(self, privmsg):
 	msg = privmsg.getMessage()[4:]
-	m = md5.new(msg).digest()
-	privmsg.send('MD5: ' + str(m))
+	m = hashlib.md5()	
+	digest  = md5.new(msg.encode('utf-8')).digest()
+	privmsg.send('MD5: ' + digest.hexdigest())
 
     def getParameterRegex(self):
         return '.+'
