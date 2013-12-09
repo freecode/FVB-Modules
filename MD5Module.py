@@ -7,7 +7,7 @@ class MD5Module(ExternalModule):
         return 'md5'
 
     def processMessage(self, privmsg):
-	msg = privmsg.getMessage()[4:]
+	msg = privmsg.getMessage()[5:]
 	m = hashlib.md5()	
 	m.update(msg.encode('utf-8'))
 	privmsg.send('MD5: ' + m.hexdigest())
