@@ -2,6 +2,7 @@ from org.freecode.irc.votebot.api import ExternalModule
 
 import hashlib
 
+
 class MD5Module(ExternalModule):
     def getName(self):
         return 'md5'
@@ -14,3 +15,8 @@ class MD5Module(ExternalModule):
 
     def getParameterRegex(self):
         return '.+'
+
+
+import shared
+reload(shared)
+# the internet told me this will reload it all
