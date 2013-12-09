@@ -17,6 +17,3 @@ class MD5Module(ExternalModule):
         return '.+'
 
 
-import shared
-reload(shared)
-# the internet told me this will reload it all
