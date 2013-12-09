@@ -1,7 +1,7 @@
 from org.freecode.irc.votebot.api import ExternalModule
 
 
-class TestMod(ExternalModule):
+class TestModule(ExternalModule):
     def getName(self):
         return 'pytest'
 
