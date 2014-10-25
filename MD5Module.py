@@ -11,6 +11,7 @@ class MD5Module(ExternalModule):
         msg = privmsg.getMessage()[5:]
         m = hashlib.md5()
         m.update(msg.encode('utf-8'))
+        print msg
         privmsg.send('MD5: ' + m.hexdigest())
 
     def getParameterRegex(self):
